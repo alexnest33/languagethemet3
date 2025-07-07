@@ -1,16 +1,20 @@
 import { useContext } from "react";
 import languagecontext from "../LanguageContext/languagecontext";
 import themecontext from "../ThemeContext/themecontext";
+import { translations } from "../../translations";
+
 
 const Header = () => {
-  const theme = useContext(themecontext);
-  const language = useContext(languagecontext);
+  const {theme} = useContext(themecontext);
+  const {language} = useContext(languagecontext);
+  console.log(language)
 
   return (
     <>
-      <h1 className={language === "en" ? "blackColor" : "redColor"}>
-        Добро пожаловать
-      </h1>
+     <p className={theme === 'light' ? 'blackColor' : 'redColor'} >{translations[language].welcome }</p>
+
+     
+    
       
     </>
   );

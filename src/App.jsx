@@ -10,17 +10,8 @@ function App() {
   const [theme, setTheme] = useState("light");
   const [language, setLanguage] = useState("en");
 
-  const translations = {
-    en: {
-      welcome: "Welcome",
-      profile: "Your profile",
-    },
-    ru: {
-      welcome: "Добро пожаловать",
-      profile: "Твой профиль",
-    },
-  };
 
+  
   const toggleLanguage = () => {
     setLanguage((oldState) => (oldState === "en" ? "ru" : "en"));
   };
@@ -32,9 +23,9 @@ function App() {
   return (
     <>
       <LanguageContext.Provider
-        value={{ language, toggleLanguage, translations }}
+        value={{ language, toggleLanguage}}
       >
-        <ThemeContext.Provider value={{ theme, toggleTheme, translations }}>
+        <ThemeContext.Provider value={{ theme, toggleTheme}}>
           <Header />
           <ControlsPanel />
 
